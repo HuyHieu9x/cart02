@@ -1,0 +1,16 @@
+<div class="card-group">
+    <div class="card" *ngFor="let item of prd">
+      <img class="card-img-top" [src]="item.image" [alt]="item.name">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <h5 class="card-title" style="color: red;font-family: italic;">{{item.price}} vnđ</h5>
+        <p class="card-text">{{item.description}}.</p>
+      </div>
+      <div class="card-footer">      
+            <small class="text-muted">
+                <input type="number"  class="form-control" aria-label="" aria-describedby="inputGroup-sizing-sm" [value]="item.quantity">
+            </small>
+            <button type="button" class="btn btn-success">Update</button>
+            <button type="button" class="btn btn-danger" (click)="deleteMilk(item.id)">Delete</button>     
+    </div>
+  </div>
